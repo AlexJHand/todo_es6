@@ -1,5 +1,5 @@
 // Create angular app in js
-const myApp = angular.module('myApp', ['ngRoute']);
+let myApp = angular.module('myApp', ['ngRoute']);
 
 // Create basic routing config
 myApp.config(($routeProvider, $locationProvider) => {
@@ -9,5 +9,5 @@ myApp.config(($routeProvider, $locationProvider) => {
         controller: 'IndexController as ic'
     }).otherwise('/');
     // Added for the removal of '#' characters in url
-    $locationProvider.html5mode(true);
+    $locationProvider.html5Mode(true);
 })
