@@ -7,12 +7,12 @@ const index = require('./routes/index.router');
 const port = process.env.PORT || 4501;
 
 // Middleware 
-app.use(express.static('public'));
+app.use(express.static('./server/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Routes
-app.use('/', index);
+app.use('/*', index);
 
 // Listener
 app.listen(port, function () {

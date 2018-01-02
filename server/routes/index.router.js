@@ -5,7 +5,7 @@ const path = require('path');
 // Base url get
 router.get('/', function (req, res) {
     console.log('In base url');
-    let indexPath = path.join(__dirname, '../public/views/index.html');
+    let indexPath = path.join(__dirname, '../public/index.html');
     res.sendFile(indexPath);
 })
 
