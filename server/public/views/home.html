@@ -1,7 +1,10 @@
 <div>
-    <input type="text" placeholder="Text" ng-model="ic.textInput">
-    <button type="submit" ng-click="ic.displayText(ic.textInput)">Submit</button>
+    <input type="text" placeholder="To Do" ng-model="ic.textInput">
+    <label for="dueDate"></label>
+    <input type="date" name="dueDate" ng-model="ic.dueDate">
+    <button type="submit" ng-click="ic.displayText(ic.textInput, ic.dueDate)">Submit</button>
     
     <p>{{ic.textInput}}</p>
+    <p>{{ic.dueDate}}</p>
 
 </div>
