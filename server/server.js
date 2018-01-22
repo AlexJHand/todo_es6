@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const index = require('./routes/index.router');
+const todo = require('./routes/todo.router');
 const port = process.env.PORT || 4501;
 
 // Middleware 
@@ -12,6 +13,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 // Routes
+app.use('/todo', todo);
 app.use('/*', index);
 
 // Listener
