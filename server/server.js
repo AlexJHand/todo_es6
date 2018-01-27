@@ -1,6 +1,6 @@
 // Requires 
 const express = require('express');
-const app = express();
+let app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const index = require('./routes/index.router');
@@ -8,9 +8,9 @@ const todo = require('./routes/todo.router');
 const port = process.env.PORT || 4501;
 
 // Middleware 
-app.use(express.static('./server/public'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('./server/public'));
 
 // Routes
 app.use('/todo', todo);
